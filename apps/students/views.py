@@ -1,5 +1,6 @@
 import csv
 
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import widgets
@@ -146,6 +147,7 @@ def get_notice(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            messages.success(request, 'Successfully published')
             form_data.save()
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -162,6 +164,7 @@ def get_vacancy(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            messages.success(request, 'Successfully posted')
             form_data.save()
     # if a GET (or any other method) we'll create a blank form
     else:
