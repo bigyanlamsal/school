@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "apps.result",
     "basic",
     "django.contrib.admin",
+    "django_filters",
 ]
 
 MIDDLEWARE = [

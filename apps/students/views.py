@@ -15,6 +15,8 @@ from basic.models import Admission_Student
 
 from .form import NoticesForm, VacancyForm
 from django.shortcuts import render, redirect
+from .filters import StudentFilter
+
 
 class AdmissionListView(LoginRequiredMixin, ListView):
     context_object_name = 'obj'
@@ -26,6 +28,15 @@ class StudentListView(LoginRequiredMixin, ListView):
     context_object_name = 'obj'
     model = Student
     template_name = "students/student_list.html"
+    #def get_queryset(self):
+        #qs = self.model.objects.all()
+        #student_filtered_list = OrderFilter(self.request.GET, queryset = qs)
+        #return student_filtered_list.qs
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["filter"] = StudentFilter(self.request.GET, queryset = self.get_queryset()) 
+        return context
+    
 
 class AdmissionDetailView(LoginRequiredMixin, DetailView):
     model = Student
