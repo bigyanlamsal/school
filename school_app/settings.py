@@ -25,7 +25,7 @@ SECRET_KEY = "__$1ud47e&nyso5h5o3fwnqu4+hfqcply9h$k*h2s34)hn5@nc"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'shreesheetala.edu.np']
+ALLOWED_HOSTS = ['127.0.0.1', 'schoolmanagementsystemnepal.herokuapp.com']
 
 
 # Application definition
