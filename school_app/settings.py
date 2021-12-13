@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = "__$1ud47e&nyso5h5o3fwnqu4+hfqcply9h$k*h2s34)hn5@nc"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shreesheetala.herokuapp.com']
 
 
 # Application definition
@@ -89,11 +90,11 @@ WSGI_APPLICATION = "school_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'postgres',
-        "USER" : 'postgres',
-        "PASSWORD": "admin",
-        "HOST": "localhost",
-        "PORT" : "",
+        "NAME": 'de3chmin21623f',
+        "USER" : 'jnqqhsmxybqbxo',
+        "PASSWORD": "a53aa8720fd8246fff77aacc5de405ff021b912488ca937718bd6f3856843e03",
+        "HOST": "ec2-3-220-156-4.compute-1.amazonaws.com",
+        "PORT" : "5432",
     }
 }
 
@@ -140,7 +141,10 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
+
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+django_heroku.settings(locals())
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
