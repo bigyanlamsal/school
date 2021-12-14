@@ -53,7 +53,7 @@ class StudentBulkUpload(models.Model):
 
 class Notice_info(models.Model):
     
-    title = models.CharField(max_length = 100)
+    title = models.CharField(max_length = 100,)
     detail = models.TextField(max_length = 1000)
     passport = models.ImageField(blank=True, upload_to="students/notices_file/")
     date = models.DateField(default=timezone.now)
@@ -65,7 +65,7 @@ class Notice_info(models.Model):
 class Vacancy_info(models.Model):
     
     subject = models.CharField(max_length = 100)
-    level = models.TextField(max_length = 1000)
+    level = models.CharField(max_length = 1000)
     image_vacancy = models.ImageField(blank=True, upload_to="students/vacancy_file/")
     date = models.DateField(default=timezone.now)
     end_date = models.DateField(default=None)
@@ -73,3 +73,11 @@ class Vacancy_info(models.Model):
 
     def __str__(self):
         return self.subject
+
+class Carousel_info(models.Model):
+    
+    image_name = models.CharField(max_length=20)
+    image_carousel = models.ImageField(blank=True, upload_to="students/carousel_file/")
+
+    def __str__(self):
+        return self.image_name

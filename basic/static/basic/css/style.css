@@ -114,3 +114,125 @@ hr.rounded {
 .w3-container{
 	text-align: center;
 }
+
+@media screen and (max-width:481px) {
+	ul.navbar-nav{
+		background-color: #262626;
+		color: white;
+		align-content: center;	
+		
+	   }
+	   a.navbar-brand{
+		   background-color: white;
+	   }
+	   .carousel-item {
+		   width: 94%;
+		   margin: 3%;
+		   height: 70vh;
+		   min-height: 200px;
+	   }
+	   .carousel-caption {
+		   bottom: 220px;
+	   }
+	   .navbar-nav{
+		   color: red;
+	   }
+	   
+	   .carousel-caption h5 {
+		   color: red;
+		   font-size: 30px;
+		   letter-spacing: 2px;
+		   margin-top: 25px;
+		   font-family: merienda;
+	   }
+	   .carousel-caption p {
+		   width: 50%;
+		   margin: auto;
+		   font-weight: bold;
+		   font-size: 20px;
+		   line-height: 1.9;
+		   color: red;
+		   font-family: poppins;
+	   }
+	   .carousel-caption a {
+		   text-transform: uppercase;
+		   background: #262626;
+		   padding: 10px 30px;
+		   display: inline-block;
+		   color: red;
+		   margin-top: 15px;
+	   }
+	   .navbar-nav a {
+		   color: red;
+		   font-family: poppins;
+		   font-size: 18px;
+		   text-transform: uppercase;
+		   font-weight: bold;
+	   }
+	   .navbar-light .navbar-brand {
+		   color:rgb(41, 18, 18);
+		   font-size: 25px;
+		   text-transform: uppercase;
+		   font-weight: bold;
+		   letter-spacing: 2px;
+	   }
+	   .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+		   color: #fff;
+	   }
+	   .navbar-light .navbar-nav .nav-link {
+		   color: #fff;
+	   }
+	   .navbar-nav {
+		   text-align: center;
+	   }
+	   .nav-link {
+		   padding: .2rem 1rem;
+	   }
+	   .nav-link.active, .nav-link:focus {
+		   color: #fff;
+	   }
+	   .navbar-toggler {
+		   padding: 1px 5px;
+		   font-size: 18px;
+		   line-height: 0.3;
+		   background: #fff;
+	   }
+	   .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+		   color: #fff;
+	   }
+	   .w-100 {
+		   height: 100vh;
+	   }
+	   @media only screen and (max-width: 767px) {
+		   .navbar-nav.ml-auto {
+			   background: rgba(0, 0, 0, 0.5);
+		   }
+		   .navbar-nav a {
+			   font-size: 14px;
+			   font-weight: normal;
+		   }
+	   }
+	   
+	   .notice{
+		   text-align : center;
+	   }
+	   
+	   .footer{
+		   text-align: center;
+	   }
+	   hr.rounded {
+		   border-top: 8px solid #bbb;
+		   border-radius: 5px;
+		 }
+		.events{
+			padding: 5px;
+			text-align: center;
+		} 
+		li {
+		  text-decoration: none;
+		}
+	   .w3-container{
+		   text-align: center;
+	   }
+	
+}

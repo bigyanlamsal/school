@@ -30,5 +30,8 @@ urlpatterns = [
     path("publish_in_vacancy/", views.show_vacancy, name="publish_in_vacancy"),
     path("notice_publish/", views.get_notice, name="get_notice"),
     path("vacancy_publish/", views.get_vacancy, name="get_vacancy"),
+    path("publish_in_carousel/", views.show_carousel, name="publish_in_carousel"),
+    path("carousel_publish/", views.get_carousel, name="get_carousel"),
+
     
 ]

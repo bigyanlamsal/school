@@ -14,7 +14,7 @@ from apps.finance.models import Invoice
 from .models import Student, StudentBulkUpload, Notice_info
 from basic.models import Admission_Student
 
-from .form import NoticesForm, VacancyForm
+from .form import NoticesForm, VacancyForm, CarouselForm
 from django.shortcuts import render, redirect
 from .filters import StudentFilter
 
@@ -136,6 +136,10 @@ def show_vacancy(request):
     form = VacancyForm()
     return render(request, 'students/vacancy_publish.html', {'form': form})
 
+def show_carousel(request):
+    form = CarouselForm()
+    return render(request, 'students/carousel_publish.html', {'form': form})    
+
 
 def get_notice(request):
     # if this is a POST request we need to process the form data
@@ -170,3 +174,20 @@ def get_vacancy(request):
     else:
         form = VacancyForm()
     return redirect(show_vacancy)
+
+def get_carousel(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form_data = CarouselForm(request.POST, request.FILES)
+        # check whether it's valid:
+        if form_data.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            messages.success(request, 'Successfully posted carousel')
+            form_data.save()
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = CarouselForm()
+    return redirect(show_carousel)

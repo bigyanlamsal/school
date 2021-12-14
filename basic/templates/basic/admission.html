@@ -8,29 +8,29 @@
               {% csrf_token %}
               <h4 style="text-align: center;">Admission Form</h4>
               <label for="fname">First Name</label>
-              <input type="text" id="fname" name="firstName" placeholder="Your name..">
+              <input type="text" id="fname" name="firstName" placeholder="Your name.." required>
           
               <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastName" placeholder="Your last name..">
+              <input type="text" id="lname" name="lastName" placeholder="Your last name.." required>
               
               <label for="lname">Father's Name</label>
-              <input type="text" id="fname" name="fathersName" placeholder="Your father's name..">
+              <input type="text" id="fname" name="fathersName" placeholder="Your father's name.." required>
 
               <label for="lname">Mother's Name</label>
-              <input type="text" id="mname" name="mothersName" placeholder="Your mother's name..">
+              <input type="text" id="mname" name="mothersName" placeholder="Your mother's name.." required>
 
               <label for="lname">Class</label>
-              <input type="text"  name="classNumber"  placeholder="Class">
+              <input type="text"  name="classNumber"  placeholder="Class" required>
               <label for="lname">Phone Number</label>
-              <input type="number" name="mob_number"  placeholder="Your Phone Number..">
+              <input type="number" name="mob_number"  placeholder="Your Phone Number.." required>
               <label for="lname">Email</label>
-              <input type="email"  name="email"  placeholder="Your email (e/g example@gmail.com)..">
+              <input type="email"  name="email"  placeholder="Your email (e/g example@gmail.com).." required>
 
               <label for="lname">Grade</label>
-              <input type="text" name="gradeValue"  placeholder="Grade you want to admit..">
+              <input type="text" name="gradeValue"  placeholder="Grade you want to admit.." required>
 
               <label for="subject">Why Us?</label>
-              <textarea id="subject" name="subject" placeholder="Thank you for choosing us.." style="height:200px"></textarea>
+              <textarea id="subject" name="subject" placeholder="Thank you for choosing us.." style="height:200px" required></textarea>
 
               <div class="button">
               <input type="submit" value="Submit">

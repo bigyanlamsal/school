@@ -3,11 +3,12 @@ from basic import models
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.contrib import messages
-from apps.students.models import Notice_info, Vacancy_info
+from apps.students.models import Notice_info, Vacancy_info , Carousel_info
 # Create your views here.
 def index(request):
     obj = Notice_info.objects.all()
-    return render(request, "basic/index.html",{'obj': obj})
+    img = Carousel_info.objects.all()
+    return render(request, "basic/index.html",{'obj': obj,'img':img})
 
 def admin_office(request):
     return render(request, "basic/admin.html")
@@ -15,8 +16,6 @@ def admin_office(request):
 def admission(request):
     return render(request, "basic/admission.html")
     
-def contact(request):
-    return render(request, "basic/contact.html", {'obj':obj})
 
 def vacancy(request):
     obj = Vacancy_info.objects.all()
