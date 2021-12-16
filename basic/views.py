@@ -8,7 +8,8 @@ from apps.students.models import Notice_info, Vacancy_info , Carousel_info
 def index(request):
     obj = Notice_info.objects.all()
     img = Carousel_info.objects.all()
-    return render(request, "basic/index.html",{'obj': obj,'img':img})
+    vac = Vacancy_info.objects.all()
+    return render(request, "basic/index.html",{'obj': obj,'img':img, 'vac':vac})
 
 def admin_office(request):
     return render(request, "basic/admin.html")
