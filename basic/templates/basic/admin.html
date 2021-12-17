@@ -66,30 +66,62 @@
   </div>
     <!--NavBar Ends-->
      <!-- Admin form starts here -->
-     <div class="wrapper bgded overlay dark" style="background-image:url('images/demo/backgrounds/01.png');">
-      <div id="shout" class="hoc container clear"> 
+     <div class="wrapper1 bgded overlay dark">
+      <div id="shout1" class="hoc container"> 
         <!-- ################################################################################################ -->
         <article>
-          <header>Admin Login</header>
       <form action="{% url 'admin_office_login' %}" method="POST">
         {% csrf_token %}
-        <div class="field email">
-          <div class="input-area">
-            <input type="text" placeholder="Username" name="username_office">
-            <i class="icon fas fa-envelope"></i>
-            <i class="error error-icon fas fa-exclamation-circle"></i>
-          </div>
-          <div class="error error-txt">Email can't be blank</div>
-        </div>
-        <div class="field password">
-          <div class="input-area">
-            <input type="password" placeholder="Password" name="password_office">
-            <i class="icon fas fa-lock"></i>
-            <i class="error error-icon fas fa-exclamation-circle"></i>
-          </div>
-          <div class="error error-txt">Password can't be blank</div>
-        </div>
-        <input type="submit" value="Login">
+        <style>
+          input[type=text], select {
+          width: 90%;
+          height: 40px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          }
+          input[type=password], select {
+            width: 90%;
+          height: 40px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          }
+         input[type=submit] {
+          width: 30%;
+          height: 30px;
+           background-color: #4CAF50;
+           color: white;
+           padding-top: 20px ;
+           margin: 8px 8px;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+         }
+         input[type=submit]:hover {
+           background-color: black;
+         }
+         input [type=submit] {
+          padding: 5px;
+         }
+         
+        </style>
+        <h1>Admin Login</h1>
+        <label for="fname"> Username</label>
+        <input type="text" id="uname" name="username" placeholder="Your username..">
+    
+        <label for="lname">Password</label>
+        <input type="password" id="lname" name="lastname" placeholder="Your password..">
+        <br>
+        <a href="#">Not a admin? Return home..</a>
+        <br>
+        <input type="submit" value="Submit">
       </form>
         </article>
         <!-- ################################################################################################ -->

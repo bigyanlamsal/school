@@ -100,7 +100,11 @@ File: Layout CSS
 #shout article{display:block; max-width:75%; margin:0 auto;}
 #shout article .heading{margin-bottom:20px;}
 
+#shout1{text-align:center;}
 
+#shout1 *{margin:0; padding:0;}
+#shout1 article{display:flex; max-width:100%; margin:0 auto;}
+#shout1 article .heading{margin-bottom:20px;}
 /* Services
 --------------------------------------------------------------------------------------------------------------- */
 #services{text-align:center;}
@@ -404,6 +408,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#82B7DF;}
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
 .container .sidebar nav a:hover{color:#82B7DF;}
 
+.container form{
+	align-items: center;
+}
+
 .pagination a, .pagination strong{border-color:#D7D7D7;}
 .pagination .current *{color:#FFFFFF; background-color:#82B7DF;}
 
@@ -480,6 +488,9 @@ table a, #comments a{background-color:inherit;}
 
 	#shout article{max-width:none; margin:auto;}
 	#shout article .heading{font-size:2rem;}
+
+	#shout1 article{max-width:none; margin:auto;}
+	#shout1 article .heading{font-size:2rem;}
 
 	#services li:nth-last-child(-n+3){margin-bottom:30px;}
 

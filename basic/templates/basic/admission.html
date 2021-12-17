@@ -9,8 +9,7 @@
   <title>Admin Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="{% static 'basic/css/admission.css' %}" rel="stylesheet">
-  <link href="{% static 'basic/css/framework.css' %}" rel="stylesheet">
+  <link href="{% static 'basic/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'basic/css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
 
   </head>
@@ -66,62 +65,102 @@
       </nav>
     </div>
     </div>
-    <div class="container row0">
-      <div style="text-align:center">
-        <h2>Contact Us</h2>
-      </div>
-      <div class="row">
-        <div class="column">
-        </div>
-        <div class="column">
-          <form name = "myForm" action="#" onsubmit="return validateForm()" >
-            <label for="CompanyName">Company's Name</label>
-            <input type="text" id="CompanyName" placeholder="Company Name">
-  
-            <label for="CompanyAddress">Company's Address</label>
-            <input type="text" id="CompanyAddress" placeholder="Company Address">
-  
-            <label for="fname" >First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your name.." required>
-  
+    <div class="bgded overlay dark">
+      <div id="shout1" class="hoc container"> 
+        <h2>Admission form entry </h2>
+        <div>
+          <form action="/action_page.php">
+            <style>
+              input[type=text], select {
+                width: 99%;
+               height: 35px;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              }
+              input[type=password], select {
+                width: 99%;
+               height: 35px;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              }
+              input[type=number], select {
+                width: 99%;
+               height: 35px;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              }
+              input[type=mail], select {
+                width: 99%;
+               height: 35px;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              }
+             input[type=submit] {
+               width: 40%;
+               height: 50px;
+               background-color: #4CAF50;
+               color: white;
+               padding-top: 20px ;
+               margin: 8px 8px;
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;
+             }
+            
+             input[type=submit]:hover {
+               background-color: black;
+             }
+             input [type=submit] {
+              padding: 5px;
+             }
+             
+            </style>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Your last name.." required>
-  
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" placeholder="E-mail" required> 
-  
-            <label for="number">Phone Number</label>
-            <input type="text" id="number"  placeholder="Phone Number" required>
-          
-            <label for="referrer">Referral Source</label>
-            <select id="referrer" name="referrer">
-              <option value="Coupon">Coupon</option>
-              <option value="Friend">Friend</option>
-              <option value="Google">Google</option>
-              <option value="Social Media">Social Media</option>
-              <option value="Other">Other</option>
-  
-  
-            </select>
-            <label for="Questions">Questions</label>
-            <textarea id="Questions" name="subject" placeholder="Your questions here.." style="height:170px"></textarea>
-  
-            <label for="subject">Your need for our services</label>
-            <textarea id="subject" name="subject" placeholder="Your answers here.." style="height:170px"></textarea>
-  
-            <p style="text-align: left;">Please indicate the type of service needed:</p>
-            <ul>
-            <li style="text-align: left;"><input type="checkbox" value="IT Support">IT support & Managed It services</li>
-            <li style="text-align: left;"><input type="checkbox" value="Small Business">Small business IT support & Security</li>
-            <li style="text-align: left;"><input type="checkbox" value="Microsoft Consultant">Microsoft Consultant</li>
-            </ul>
-            <input type="submit" onclick="myFunction()" value="Submit">
-            <input type="reset" value="Reset">
-  
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="lname">Parent's Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="class">Class</label>
+            <input type="number" id="class" name="className" placeholder="Class you want to admit..">
+
+            <label for="grade">Grade</label>
+            <input type="number" id="grade" name="gradename" placeholder="Your recent grade...">
+
+            <label for="mail">E-mail</label>
+            <input type="mail" id="mail" name="mailname" placeholder="Your email address...">
+
+            <label for="phone">Phone-Number</label>
+            <input type="number" id="pNumber" name="No." placeholder="Your phone number...">
+             
+            <p style="font-style: italic ;color: pink;">Check your inputs carefully before submission..</p>
+            <br>
+
+            <input type="submit" value="Submit">
           </form>
         </div>
       </div>
     </div>
+  </div>
   
           
           <div class="wrapper row4">
