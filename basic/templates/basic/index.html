@@ -70,7 +70,7 @@
 </div>
 <!-- ################################################################################################ -->
 
-<div class="wrapper bgded overlay" style="background-image:url('{% static 'basic/images/01.JPG' %}');">
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'basic/images/01.jpg' %}');">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
@@ -128,7 +128,7 @@
 	  {% for obj in vac|slice:":6" %}
       <li class="one_quarter">
         <article>
-          <figure><a class="imgover" href="#"><img src="media/{{obj.image_vacancy}}" alt=""></a>
+          <figure><a class="imgover" href="/media/{{obj.image_vacancy}}" type="application/image" target="_blank" width="100%" height ="600px"><img src="media/{{obj.image_vacancy}}" alt=""></a>
             <figcaption class="heading">{{ obj.subject }}</figcaption>
           </figure>
           <em>{{ obj.level }}</em>
