@@ -14,12 +14,6 @@
 <!-- ################################################################################################ -->
 <div class="wrapper row0">
   <header id="header" class="hoc clear "> 
-    <!-- ################################################################################################ -->
-    <!-- <div id="logo" class="one_quarter first">
-        <img src="{% static 'basic/images/logo.png' %}">  -->
-      <!-- <h3 class="logoname clear"><a href="index.html"><span>Shree Sheetala</span></a></h3>
-      <h5>Since 2014 B.S.</h5> -->
-    <!-- </div> -->
     <div class=" hoc five_quarter">
       <ul class="nospace">
 		  <li class="one_fifth first1">
@@ -125,10 +119,11 @@
       <h6 class="heading underline font-x2" id="vacancy">Recent Vacancy</h6>
     </div>
     <ul class="nospace group">
-	  {% for obj in vac|slice:":6" %}
+	  {% for obj in vac reversed %}
+
       <li class="one_quarter">
         <article>
-          <figure><a class="imgover" href="/media/{{obj.image_vacancy}}" type="application/image" target="_blank" width="100%" height ="600px"><img src="media/{{obj.image_vacancy}}" alt=""></a>
+          <figure><a class="imgover" href="/media/{{obj.image_vacancy}}" target=_blank type="application/image"  width="100%" height ="600px"><img src="media/{{obj.image_vacancy}}" alt=""></a>
             <figcaption class="heading">{{ obj.subject }}</figcaption>
           </figure>
           <em>{{ obj.level }}</em>
@@ -199,9 +194,9 @@
       <h6 class="heading underline font-x2" id="notice">Notices</h6>
     </div>
     <ul class="nospace group latest">
-	{% for obj in obj|slice:":2" %}
+	{% for obj in obj reversed %}
 	
-	  <li class="one_third">
+	  <li class="one_fifth">
         <article>
           <time datetime="2045-04-05T08:14+00:00"><i class="far fa-calendar-alt rgtspace-5"></i> {{ obj.date }} </time>
           <div class="excerpt">
