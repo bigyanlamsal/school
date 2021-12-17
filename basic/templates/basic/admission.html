@@ -1,43 +1,158 @@
-{% extends "basic/base.html" %}
-
 {% load static %}
 
 {% block content %}
-        <div class="container">
-            <form action={% url 'admission_backend' %} method="POST">
-              {% csrf_token %}
-              <h4 style="text-align: center;">Admission Form</h4>
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="firstName" placeholder="Your name.." required>
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+  <head>
+  <title>Admin Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'basic/css/admission.css' %}" rel="stylesheet">
+  <link href="{% static 'basic/css/framework.css' %}" rel="stylesheet">
+  <link href="{% static 'basic/css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+
+  <body id="top">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <header id="header" class="hoc clear "> 
+      <div class=" hoc five_quarter">
+        <ul class="nospace">
+        <li class="one_fifth first1">
+              <img src="{% static 'basic/images/logo.png' %}">
+        </li>
+        <li class="one_fifth second">
+          <h1>Shree Sheetala Madhyamik Bidhyalaya,<br>
+          <p>Since 2014 B.S</p>
+          </h1>  
+        </li>
+          <li class="one_fifth">
+            <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 061-540655</span></div>
+          </li>
+          <li class="one_fifth">
+            <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> sheetalaschool09@gmail.com </span></div>
+          </li>
+          <li class="one_fifth">
+            <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Sun. - Fri.:</strong> 09.00am - 5.00pm</span></div>
+          </li>
+        </ul>
+        
+      </div>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <div class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <nav id="mainav">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="#">More</a>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Gallary</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="{% url 'admission' %}">Admission</a></li>
+          <li><a href="#vacancy">Vacancy</a></li>
+          <li><a href="#notice">Notice</a></li>
+          <li><a href="{% url 'admin_office' %}"> Admin </a></li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+    <div class="container row0">
+      <div style="text-align:center">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+        </div>
+        <div class="column">
+          <form name = "myForm" action="#" onsubmit="return validateForm()" >
+            <label for="CompanyName">Company's Name</label>
+            <input type="text" id="CompanyName" placeholder="Company Name">
+  
+            <label for="CompanyAddress">Company's Address</label>
+            <input type="text" id="CompanyAddress" placeholder="Company Address">
+  
+            <label for="fname" >First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your name.." required>
+  
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Your last name.." required>
+  
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" placeholder="E-mail" required> 
+  
+            <label for="number">Phone Number</label>
+            <input type="text" id="number"  placeholder="Phone Number" required>
           
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastName" placeholder="Your last name.." required>
-              
-              <label for="lname">Father's Name</label>
-              <input type="text" id="fname" name="fathersName" placeholder="Your father's name.." required>
+            <label for="referrer">Referral Source</label>
+            <select id="referrer" name="referrer">
+              <option value="Coupon">Coupon</option>
+              <option value="Friend">Friend</option>
+              <option value="Google">Google</option>
+              <option value="Social Media">Social Media</option>
+              <option value="Other">Other</option>
+  
+  
+            </select>
+            <label for="Questions">Questions</label>
+            <textarea id="Questions" name="subject" placeholder="Your questions here.." style="height:170px"></textarea>
+  
+            <label for="subject">Your need for our services</label>
+            <textarea id="subject" name="subject" placeholder="Your answers here.." style="height:170px"></textarea>
+  
+            <p style="text-align: left;">Please indicate the type of service needed:</p>
+            <ul>
+            <li style="text-align: left;"><input type="checkbox" value="IT Support">IT support & Managed It services</li>
+            <li style="text-align: left;"><input type="checkbox" value="Small Business">Small business IT support & Security</li>
+            <li style="text-align: left;"><input type="checkbox" value="Microsoft Consultant">Microsoft Consultant</li>
+            </ul>
+            <input type="submit" onclick="myFunction()" value="Submit">
+            <input type="reset" value="Reset">
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  
+          
+          <div class="wrapper row4">
+            <footer id="footer" class="hoc clear"> 
+              <!-- ################################################################################################ -->
+              <div class="one_quarter first">
+                <h1 class="logoname clear"><a href="index.html"><i class="fas fa-handshake"></i> <span>Shree Sheetala</span></a></h1>
+                <p class="btmspace-30">Getting in touch is easy! [<a href="#">&hellip;</a>]</p>
+                <ul class="faico clear">
+                  <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                  <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+              </div>
+              <div class="one_quarter">
+                <h6 class="heading" id="contacting">Contact Us</h6>
+                <ul class="nospace linklist contact">
+                  <li><i class="fas fa-map-marker-alt"></i>
+                    <address>
+                    Galem-04,Fedikhola, Syangja, Gandaki, Nepal
+                    </address>
+                  </li>
+                  <li><i class="fas fa-phone"></i> +977 061-540567</li>
+                  <li><i class="fas fa-fax"></i> +977 061-540567</li>
+                  <li><i class="far fa-envelope"></i> sheetalaschool09@gmail.com</li>
+                </ul>
+              </div>
+          
+              <!-- ################################################################################################ -->
+            </footer>
+          </div>
 
-              <label for="lname">Mother's Name</label>
-              <input type="text" id="mname" name="mothersName" placeholder="Your mother's name.." required>
-
-              <label for="lname">Class</label>
-              <input type="text"  name="classNumber"  placeholder="Class" required>
-              <label for="lname">Phone Number</label>
-              <input type="number" name="mob_number"  placeholder="Your Phone Number.." required>
-              <label for="lname">Email</label>
-              <input type="email"  name="email"  placeholder="Your email (e/g example@gmail.com).." required>
-
-              <label for="lname">Grade</label>
-              <input type="text" name="gradeValue"  placeholder="Grade you want to admit.." required>
-
-              <label for="subject">Why Us?</label>
-              <textarea id="subject" name="subject" placeholder="Thank you for choosing us.." style="height:200px" required></textarea>
-
-              <div class="button">
-              <input type="submit" value="Submit">
-            </div>
-
-            </form>
-            </div>
             <!-- Copyright -->
 		
  {% endblock %}
