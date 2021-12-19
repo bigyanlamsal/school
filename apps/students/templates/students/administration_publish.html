@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Administrative Staff {% endblock title %}
+{% block content %}
+  <p>Publish Your Administrative Info Here</p>
+  
+<form action="{% url 'get_administration' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>
+{% endblock content %}

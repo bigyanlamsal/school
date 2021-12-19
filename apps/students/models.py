@@ -70,9 +70,18 @@ class Vacancy_info(models.Model):
     date = models.DateField(default=timezone.now)
     end_date = models.DateField(default=None)
 
-
     def __str__(self):
         return self.subject
+
+class Administration_info(models.Model):
+    
+    name = models.CharField(max_length = 100)
+    position = models.CharField(max_length = 1000)
+    image_profile = models.ImageField(blank=True, upload_to="students/vacancy_file/")
+    description = models.TextField(max_length = 1000)
+
+    def __str__(self):
+        return self.position
 
 class Carousel_info(models.Model):
     

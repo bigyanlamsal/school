@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <title>Shree Sheetala</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="{% static 'basic/css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+    <body id="top">
+        <!-- ################################################################################################ -->
+        <div class="wrapper row0">
+          <header id="header" class="hoc clear "> 
+            <div class=" hoc five_quarter">
+              <ul class="nospace">
+                  <li class="one_fifth first1">
+                    <img src="{% static 'basic/images/logo.png' %}">
+                  </li>
+                  <li class="one_fifth second">
+                      <h1>Shree Sheetala Madhyamik Bidhyalaya,<br>
+                        <p>Since 2014 B.S</p>
+                      </h1>  
+                  </li>
+                <li class="one_fifth">
+                  <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 063-691049</span></div>
+                </li>
+                <li class="one_fifth">
+                  <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> sheetalaschool09@gmail.com </span></div>
+                </li>
+                <li class="one_fifth">
+                  <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Sun. - Fri.:</strong> 09.00am - 5.00pm</span></div>
+                </li>
+              </ul>
+                
+            </div>
+            <!-- ################################################################################################ -->
+          </header>
+        </div>
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+          <div class="hoc clear"> 
+            <!-- ################################################################################################ -->
+            <nav id="mainav">
+              <ul class="clear">
+                <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                <li><a class="drop" href="">More</a>
+                  <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="{% url 'gallery' %}">Gallary</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="{% url 'admission' %}">Admission</a></li>
+                <li><a href="{% url 'index' %}">Vacancy</a></li>
+                <li><a href="{% url 'index' %}">Notice</a></li>
+                <li><a href="{% url 'admin_office' %}"> Admin </a></li>
+              </ul>
+            </nav>
+            <!-- ################################################################################################ -->
+          </div>
+        </div> 
+
+
+<div class="wrapper row3">
+  <section id="team" class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-80">
+      <h6 class="heading underline font-x2" id="vacancy">Recent Images</h6>
+    </div>
+    <style>
+      div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+      }
+      
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+      
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+      
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+      </style>
+    <ul class="nospace group">
+	  {% for obj in object_list reversed %}
+    {% if forloop.counter0|divisibleby:"4" %}
+        <div class="one_quarter first">
+          <a target="_blank" href="/media/{{obj.image_carousel}}">
+            <img src="/media/{{obj.image_carousel}}" alt="{{ obj.image_name }}" width="600" height="400">
+          </a>
+          <div class="desc">{{ obj.image_name }}</div>
+        </div>
+        
+    {% else %}
+    <div class="one_quarter ">
+      <a target="_blank" href="/media/{{obj.image_carousel}}">
+        <img src="/media/{{obj.image_carousel}}" alt="{{ obj.image_name }}" width="600" height="400">
+      </a>
+      <div class="desc">{{ obj.image_name }}</div>
+    </div>
+    {% endif %}  
+	  {% endfor %}
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_quarter first">
+      <h1 class="logoname clear"><a href="index.html"><i class="fas fa-handshake"></i> <span>Shree Sheetala</span></a></h1>
+      <p class="btmspace-30">Getting in touch is easy! [<a href="#">&hellip;</a>]</p>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading" id="contacting">Contact Us</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fas fa-map-marker-alt"></i>
+          <address>
+          Galem-04,Fedikhola, Syangja, Gandaki, Nepal
+          </address>
+        </li>
+        <li><i class="fas fa-phone"></i> +977 063-691049</li>
+        <li><i class="fas fa-fax"></i> +977 063-691049</li>
+        <li><i class="far fa-envelope"></i> sheetalaschool09@gmail.com</li>
+      </ul>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">iDeal Soft</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

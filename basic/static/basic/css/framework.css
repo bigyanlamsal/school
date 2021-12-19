@@ -99,7 +99,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 
 /* Grid - RS-MQF 1140 V.2 - https://www.os-templates.com/free-basic-html5-templates/rs-mqf-1140
 --------------------------------------------------------------------------------------------------------------- */
-.one_half,.half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter,.one_fifth, .five_quarter{display:inline-block; float:left; margin:0 0 0 4.21052%; list-style:none;}
+.one_half,.half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter, .one_fifth, .one_seventh, .five_quarter{display:inline-block; float:left; margin:0 0 0 4.21052%; list-style:none;}
 
 .first1{position:relative;margin-left:0; clear:left; top:-40px ;}
 .first{margin-left:0; clear: left;}
@@ -115,6 +115,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 .two_third{width:65.26315%;}
 .three_quarter{width:73.94736%;}
 .one_fifth{width: 16%;}
+.one_seventh{width: 12%;}
 .five_quarter{width: 110%;}
 
 

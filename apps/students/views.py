@@ -12,10 +12,10 @@ from django.contrib.auth.decorators import login_required
 
 from apps.finance.models import Invoice
 
-from .models import Student, StudentBulkUpload, Notice_info
+from .models import Student, StudentBulkUpload, Notice_info, Vacancy_info, Carousel_info , Administration_info
 from basic.models import Admission_Student
 
-from .form import NoticesForm, VacancyForm, CarouselForm
+from .form import NoticesForm, VacancyForm, CarouselForm, AdministrationForm
 from django.shortcuts import render, redirect
 from .filters import StudentFilter
 
@@ -142,46 +142,12 @@ def show_vacancy(request):
 @login_required
 def show_carousel(request):
     form = CarouselForm()
-    return render(request, 'students/carousel_publish.html', {'form': form})    
-
-@login_required
-def list_notice(request):
-    object_list = Notice_info.objects.all()
-    return render(request, 'students/notice_list.html', {'object_list': object_list})
-@login_required
-def update_notice(request, pk):
-    if request.method == 'POST':
-        pi = Notice_info.objects.get(id=pk)
-        fm = NoticesForm(request.POST, instance=pi)
-        if fm.is_valid():
-            fm.save()
-    else:
-        pi = Notice_info.objects.get(id=pk)
-        fm = NoticesForm(instance=pi)
-    return render(request, 'students/notice_update.html', {'form': fm })
-
-
-@login_required
-def delete_notice(request, pk):
-    if request.method == 'POST':
-        pi = Notice_info.objects.get(id=pk)
-        pi.delete()
-    return redirect(list_notice)
+    return render(request, 'students/carousel_publish.html', {'form': form})   
 
 @login_required
 def show_notice(request):
     form = NoticesForm()
     return render(request, 'students/notice_publish.html', {'form': form})
-
-@login_required
-def show_vacancy(request):
-    form = VacancyForm()
-    return render(request, 'students/vacancy_publish.html', {'form': form})
-
-@login_required
-def show_carousel(request):
-    form = CarouselForm()
-    return render(request, 'students/carousel_publish.html', {'form': form})    
 
 @login_required
 def get_notice(request):
@@ -199,7 +165,85 @@ def get_notice(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = NoticesForm()
-    return redirect(show_notice)
+    return redirect(show_notice)    
+
+@login_required
+def list_notice(request):
+    object_list = Notice_info.objects.all()
+    return render(request, 'students/notice_list.html', {'object_list': object_list})
+
+@login_required
+def update_notice(request, pk):
+    if request.method == 'POST':
+        pi = Notice_info.objects.get(id=pk)
+        fm = NoticesForm(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+            messages.info(request, 'Successfully posted notice')
+    else:
+        pi = Notice_info.objects.get(id=pk)
+        fm = NoticesForm(instance=pi)
+    return render(request, 'students/notice_update.html', {'form': fm })
+
+@login_required
+def delete_notice(request, pk):
+    if request.method == 'POST':
+        pi = Notice_info.objects.get(id=pk)
+        pi.delete()
+        messages.error(request, 'Successfully deleted notice')
+    return redirect(list_notice)    
+
+@login_required
+def list_vacancy(request):
+    object_list = Vacancy_info.objects.all()
+    return render(request, 'students/vacancy_list.html', {'object_list': object_list})
+    
+@login_required
+def update_vacancy(request, pk):
+    if request.method == 'POST':
+        pi = Vacancy_info.objects.get(id=pk)
+        fm = VacancyForm(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+            messages.info(request, 'Successfully posted vacancy')
+    else:
+        pi = Vacancy_info.objects.get(id=pk)
+        fm = VacancyForm(instance=pi)
+    return render(request, 'students/vacancy_update.html', {'form': fm })
+
+@login_required
+def delete_vacancy(request, pk):
+    if request.method == 'POST':
+        pi = Vacancy_info.objects.get(id=pk)
+        pi.delete()
+        messages.error(request, 'Successfully deleted vacancy')
+    return redirect(list_vacancy)
+  
+
+@login_required
+def show_vacancy(request):
+    form = VacancyForm()
+    return render(request, 'students/vacancy_publish.html', {'form': form})
+
+@login_required
+def list_gallery(request):
+    object_list = Carousel_info.objects.all()
+    return render(request, 'students/gallery_list.html', {'object_list': object_list})
+
+@login_required
+def show_carousel(request):
+    form = CarouselForm()
+    return render(request, 'students/carousel_publish.html', {'form': form})  
+
+@login_required
+def delete_gallery(request, pk):
+    if request.method == 'POST':
+        pi = Carousel_info.objects.get(id=pk)
+        pi.delete()
+        messages.error(request, 'Successfully deleted notice')
+    return redirect(list_gallery)  
+
+
 
 def get_vacancy(request):
     # if this is a POST request we need to process the form data
@@ -234,3 +278,52 @@ def get_carousel(request):
     else:
         form = CarouselForm()
     return redirect(show_carousel)
+
+@login_required
+def show_administration(request):
+    form = AdministrationForm()
+    return render(request, 'students/administration_publish.html', {'form': form})
+
+@login_required
+def get_administration(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form_data = AdministrationForm(request.POST, request.FILES)
+        # check whether it's valid:
+        if form_data.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            messages.success(request, 'Successfully added')
+            form_data.save()
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = AdministrationForm()
+    return redirect(show_administration)    
+
+@login_required
+def list_administration(request):
+    object_list = Administration_info.objects.all()
+    return render(request, 'students/administration_list.html', {'object_list': object_list})
+
+@login_required
+def update_administration(request, pk):
+    if request.method == 'POST':
+        pi = Administration_info.objects.get(id=pk)
+        fm = AdministrationForm(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+            messages.info(request, 'Successfully updated administration')
+    else:
+        pi = Administration_info.objects.get(id=pk)
+        fm = AdministrationForm(instance=pi)
+    return render(request, 'students/administration_update.html', {'form': fm })
+
+@login_required
+def delete_administration(request, pk):
+    if request.method == 'POST':
+        pi = Administration_info.objects.get(id=pk)
+        pi.delete()
+        messages.error(request, 'Successfully deleted administrative staff')
+    return redirect(list_administration)    

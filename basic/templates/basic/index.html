@@ -25,7 +25,7 @@
 			  </h1>  
 		  </li>
         <li class="one_fifth">
-          <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 061-540655</span></div>
+          <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 063-691049</span></div>
         </li>
         <li class="one_fifth">
           <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> sheetalaschool09@gmail.com </span></div>
@@ -45,14 +45,14 @@
     <!-- ################################################################################################ -->
     <nav id="mainav">
       <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="{% url 'index' %}">Home</a></li>
         <li><a class="drop" href="#">More</a>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Gallary</a></li>
+            <li><a href="#AboutUs">About Us</a></li>
+            <li><a href="{% url 'gallery' %}">Gallary</a></li>
           </ul>
         </li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#AboutUs">About Us</a></li>
         <li><a href="{% url 'admission' %}">Admission</a></li>
         <li><a href="#vacancy">Vacancy</a></li>
         <li><a href="#notice">Notice</a></li>
@@ -85,7 +85,7 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <article class="group">
+    <article class="group" id="AboutUs">
       <div class="one_half first">
         <h6 class="heading underline font-x2">About Us</h6>
         <p>Nec vel purus in leo elit mattis non imperdiet sed pulvinar.</p>
@@ -120,7 +120,30 @@
     </div>
     <ul class="nospace group">
 	  {% for obj in vac reversed %}
-
+    {% if forloop.counter0|divisibleby:"4" %}
+      <li class="one_quarter first">
+        <article>
+          <figure><a class="imgover" href="/media/{{obj.image_vacancy}}" target=_blank type="application/image"  width="100%" height ="600px"><img src="media/{{obj.image_vacancy}}" alt=""></a>
+            <figcaption class="heading">{{ obj.subject }}</figcaption>
+          </figure>
+          <em>{{ obj.level }}</em>
+          <p>Mail us your c.v on sheetalaschool09@gmail.com [<a href="#">&hellip;</a>]</p>
+		  <p>Vacancy published on</p>
+		  <em>{{ obj.date }}</em>
+		  <p>Vacancy  deadline</p>
+		  <em>{{ obj.end_date }}</em>
+          <footer>
+            <ul class="faico clear">
+              <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+              <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+              <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+            </ul>
+          </footer>
+        </article>
+      </li>
+    {% else %}
       <li class="one_quarter">
         <article>
           <figure><a class="imgover" href="/media/{{obj.image_vacancy}}" target=_blank type="application/image"  width="100%" height ="600px"><img src="media/{{obj.image_vacancy}}" alt=""></a>
@@ -143,6 +166,7 @@
           </footer>
         </article>
       </li>
+    {% endif %}  
 	  {% endfor %}
     </ul>
     <!-- ################################################################################################ -->
@@ -157,30 +181,27 @@
       <h6 class="heading underline font-x2">Administrative staff</h6>
     </div>
     <ul class="nospace group btmspace-80">
+    {% for obj in adm reversed %}
+    {% if forloop.counter0|divisibleby:"3" %}
       <li class="one_third first">
-        <blockquote>Magna arcu pharetra eu interdum quis blandit ac orci phasellus sit amet leo lobortis orci imperdiet tempus sed tincidunt arcu in consequat pretium quam lacus rhoncus orci lobortis sagittis</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'basic/images/300_300.JPG' %}" alt="">
+        <blockquote>{{ obj.description }}</blockquote>
+        <figure class="clear"><img class="circle" src="media/{{obj.image_profile}}" alt="{{ obj.name }}">
           <figcaption>
-            <h6 class="heading">Tulasi Ram Paudel</h6>
-            <em>Principle</em></figcaption>
+            <h6 class="heading">{{ obj.name }}</h6>
+            <em>{{ obj.position }}</em></figcaption>
         </figure>
       </li>
+    {% else %}
       <li class="one_third">
-        <blockquote>Lorem leo vel ligula vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; quisque urna velit accumsan bibendum scelerisque sed suscipit a velit duis nec ipsum</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'basic/images/300_300.JPG' %}" alt="">
+        <blockquote>{{ obj.description }}</blockquote>
+        <figure class="clear"><img class="circle" src="media/{{obj.image_profile}}" alt="{{ obj.name }}">
           <figcaption>
-            <h6 class="heading">Milan Adhikari</h6>
-            <em>Computer Teacher / IT Head</em></figcaption>
+            <h6 class="heading">{{ obj.name }}</h6>
+            <em>{{ obj.position }}</em></figcaption>
         </figure>
       </li>
-      <li class="one_third">
-        <blockquote>Sed urna egestas consectetuer suspendisse lorem ut tortor est lobortis eu venenatis vitae pretium eu felis cras erat est cursus sed dignissim sed euismod in turpis praesent vestibulum hendrerit</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'basic/images/300_300.JPG' %}" alt="">
-          <figcaption>
-            <h6 class="heading">C. Doe</h6>
-            <em>Marketing / Company Name</em></figcaption>
-        </figure>
-      </li>
+    {% endif %}  
+    {% endfor %}
     </ul>
     <footer><a class="btn" href="#">View More &raquo;</a></footer>
     <!-- ################################################################################################ -->
@@ -195,8 +216,8 @@
     </div>
     <ul class="nospace group latest">
 	{% for obj in obj reversed %}
-	
-	  <li class="one_fifth">
+	{% if forloop.counter0|divisibleby:"3" %}
+	  <li class="one_third first">
         <article>
           <time datetime="2045-04-05T08:14+00:00"><i class="far fa-calendar-alt rgtspace-5"></i> {{ obj.date }} </time>
           <div class="excerpt">
@@ -209,6 +230,21 @@
           </div>
         </article>
       </li>
+  {% else %}
+      <li class="one_third">
+        <article>
+          <time datetime="2045-04-05T08:14+00:00"><i class="far fa-calendar-alt rgtspace-5"></i> {{ obj.date }} </time>
+          <div class="excerpt">
+            <h6 class="heading"><a href="media/{{obj.passport}}">{{ obj.title }}</a></h6>
+            <p>{{ obj.detail }}[<a href="#">&hellip;</a>]</p>
+            <ul class="meta">
+              <li><i class="fas fa-user rgtspace-5"></i> <a href="#">Admin</a></li>
+              <li><i class="fas fa-tags rgtspace-5"></i> <a href="#">Tag 1</a>, <a href="#">Tag 2</a></li>
+            </ul>
+          </div>
+        </article>
+      </li>
+    {% endif %}  
 	  {% endfor %}
     </ul>
     <!-- ################################################################################################ -->
@@ -234,8 +270,8 @@
           Galem-04,Fedikhola, Syangja, Gandaki, Nepal
           </address>
         </li>
-        <li><i class="fas fa-phone"></i> +977 061-540567</li>
-        <li><i class="fas fa-fax"></i> +977 061-540567</li>
+        <li><i class="fas fa-phone"></i> +977 063-691049</li>
+        <li><i class="fas fa-fax"></i> +977 063-691049</li>
         <li><i class="far fa-envelope"></i> sheetalaschool09@gmail.com</li>
       </ul>
     </div>

@@ -166,7 +166,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="{% url 'publish_in_vacancy' %}" class="nav-link">
+                  <a href="{% url 'vacancy_list' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
                     <p>
                       Vacancy
@@ -175,10 +175,10 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="{% url 'publish_in_carousel' %}" class="nav-link">
+                  <a href="{% url 'gallery_list' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
                     <p>
-                      Upload carousel
+                      Gallery
                     </p>
                   </a>
                 </li>
@@ -208,11 +208,21 @@
                     </p>
                   </a>
                 </li>
+
                 <li class="nav-item">
                   <a href="{% url 'classes' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
                     <p>
                       Classes
+                    </p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="{% url 'administration_list' %}" class="nav-link">
+                    <i class="nav-icon fas fa-bars"></i>
+                    <p>
+                      Administration Staffs
                     </p>
                   </a>
                 </li>

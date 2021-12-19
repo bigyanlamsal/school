@@ -29,7 +29,7 @@
           </h1>  
         </li>
           <li class="one_fifth">
-            <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 061-540655</span></div>
+            <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +977 063-691049</span></div>
           </li>
           <li class="one_fifth">
             <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> sheetalaschool09@gmail.com </span></div>
@@ -49,17 +49,17 @@
       <!-- ################################################################################################ -->
       <nav id="mainav">
         <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a class="drop" href="#">More</a>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a class="drop" href="">More</a>
             <ul>
               <li><a href="#">About Us</a></li>
-              <li><a href="#">Gallary</a></li>
+              <li><a href="{% url 'gallery' %}">Gallary</a></li>
             </ul>
           </li>
           <li><a href="#">About Us</a></li>
           <li><a href="{% url 'admission' %}">Admission</a></li>
-          <li><a href="#vacancy">Vacancy</a></li>
-          <li><a href="#notice">Notice</a></li>
+          <li><a href="{% url 'index' %}">Vacancy</a></li>
+          <li><a href="{% url 'index' %}">Notice</a></li>
           <li><a href="{% url 'admin_office' %}"> Admin </a></li>
         </ul>
       </nav>
@@ -134,21 +134,33 @@
             <h1><br></h1>
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <h1><br></h1>
         
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
+            <h1><br></h1>
+
             <label for="lname">Parent's Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <h1><br></h1>
 
             <label for="class">Class</label>
             <input type="number" id="class" name="className" placeholder="Class you want to admit..">
 
+            <h1><br></h1>
+
             <label for="grade">Grade</label>
             <input type="number" id="grade" name="gradename" placeholder="Your recent grade...">
 
+            <h1><br></h1>
+
             <label for="mail">E-mail</label>
             <input type="mail" id="mail" name="mailname" placeholder="Your email address...">
+
+            <h1><br></h1>
 
             <label for="phone">Phone-Number</label>
             <input type="number" id="pNumber" name="No." placeholder="Your phone number...">
@@ -183,8 +195,8 @@
                     Galem-04,Fedikhola, Syangja, Gandaki, Nepal
                     </address>
                   </li>
-                  <li><i class="fas fa-phone"></i> +977 061-540567</li>
-                  <li><i class="fas fa-fax"></i> +977 061-540567</li>
+                  <li><i class="fas fa-phone"></i> +977 063-691049</li>
+                  <li><i class="fas fa-fax"></i> +977 063-691049</li>
                   <li><i class="far fa-envelope"></i> sheetalaschool09@gmail.com</li>
                 </ul>
               </div>
