@@ -221,7 +221,13 @@
         <article>
           <time datetime="2045-04-05T08:14+00:00"><i class="far fa-calendar-alt rgtspace-5"></i> {{ obj.date }} </time>
           <div class="excerpt">
+            {% if obj.passport %}
             <h6 class="heading"><a href="media/{{obj.passport}}">{{ obj.title }}</a></h6>
+
+            {% else %}
+            <h6 class="heading"><a href="#notice">{{ obj.title }}</a></h6>
+
+            {% endif %}
             <p>{{ obj.detail }}[<a href="#">&hellip;</a>]</p>
             <ul class="meta">
               <li><i class="fas fa-user rgtspace-5"></i> <a href="#">Admin</a></li>
