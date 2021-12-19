@@ -6,7 +6,7 @@
 
   <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
   <head>
-  <title>Admin Login</title>
+  <title>Admission</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="{% static 'basic/css/style.css' %}" rel="stylesheet">
@@ -69,7 +69,6 @@
       <div id="shout1" class="hoc container"> 
         <h2>Admission form entry </h2>
         <div>
-          <form action="/action_page.php">
             <style>
               input[type=text], select {
                 width: 99%;
@@ -131,40 +130,52 @@
              }
              
             </style>
+            <form action={% url 'admission_backend' %} method="POST">
+            {% csrf_token %}
             <h1><br></h1>
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            <input type="text" id="fname" name="firstName" placeholder="Your name.." required>
 
             <h1><br></h1>
         
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+            <input type="text" id="lname" name="lastName" placeholder="Your last name.." required>
 
             <h1><br></h1>
 
-            <label for="lname">Parent's Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+            <label for="lname">Father's Name</label>
+            <input type="text" id="fname" name="fathersName" placeholder="Your father's name.." required>
+             
+            <h1><br></h1> 
+
+            <label for="lname">Mother's Name</label>
+            <input type="text" id="mname" name="mothersName" placeholder="Your mother's name.." required>
+
 
             <h1><br></h1>
 
             <label for="class">Class</label>
-            <input type="number" id="class" name="className" placeholder="Class you want to admit.." required>
+            <input type="number" id="class" name="classNumber" placeholder="Class you want to admit.." required>
 
             <h1><br></h1>
 
             <label for="grade">Grade</label>
-            <input type="number" id="grade" name="gradename" placeholder="Your recent grade..." required>
+            <input type="number" id="grade" name="gradeValue" placeholder="Your recent grade..." required>
 
             <h1><br></h1>
 
             <label for="mail">E-mail</label>
-            <input type="mail" id="mail" name="mailname" placeholder="Your email address..." required>
+            <input type="mail" id="mail" name="email" placeholder="Your email address..." required>
 
             <h1><br></h1>
 
             <label for="phone">Phone-Number</label>
-            <input type="number" id="pNumber" name="No." placeholder="Your phone number..." required>
+            <input type="number" id="pNumber" name="mob_number" placeholder="Your phone number..." required>
             <h1><br></h1>
+
+            <label for="subject">Why Us?</label>
+              <input type="text" id="subject" name="subject" placeholder="Thank you for choosing us.." style="height:200px">
+            <h1><br></h1>  
             <p style="font-style: italic ;color: pink;">Check your inputs carefully before submission..</p>
             <h1><br></h1>
 
